@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Coccinella-Labs/gh-pin-repo/main/.github/assets/thumbnail.png" alt="gh-pin-repo" width="100%">
+</p>
+
 # gh-pin-repo
 
 GitHub CLI extension to pin repositories to your organization profile.
