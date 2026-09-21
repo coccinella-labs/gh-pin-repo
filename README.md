@@ -74,7 +74,7 @@ After extensive research and testing, the `updatePinnedItems` mutation **does no
 
 5. **Check User/Org Pinnable Field**
    ```bash
-   gh api graphql -f query='query{organization(login:"emberlamp"){pinnable{id}}}'
+   gh api graphql -f query='query{organization(login:"coccinella-labs"){pinnable{id}}}'
    ```
    Output:
    ```
@@ -85,7 +85,7 @@ After extensive research and testing, the `updatePinnedItems` mutation **does no
 
 6. **REST API Check**
    ```bash
-   gh api /orgs/emberlamp | grep -i pin
+   gh api /orgs/coccinella-labs | grep -i pin
    ```
    Output:
    ```
@@ -108,14 +108,14 @@ This is a known missing feature - GitHub users have requested this API for years
 ## Current Status
 
 Repository pinning is only available through GitHub's web interface:
-1. Go to your org profile (e.g., https://github.com/emberlamp)
+1. Go to your org profile (e.g., https://github.com/coccinella-labs)
 2. Click "Customize your pins" in the right sidebar
 3. Select up to 6 repositories
 
 ## Installation
 
 ```bash
-gh extension install emberlamp/gh-pin-repo
+gh extension install coccinella-labs/gh-pin-repo
 ```
 
 ## Usage
