@@ -10,7 +10,7 @@ EXTENSION_NAME="pin-repo"
 
 # Get organization ID
 get_org_id() {
-    gh api graphql -F query='{ organization(login: "emberlamp") { id } }' --jq '.data.organization.id'
+    gh api graphql -F query='{ organization(login: "coccinella-labs") { id } }' --jq '.data.organization.id'
 }
 
 # Get repository ID by name
@@ -28,7 +28,7 @@ check_org_owner() {
 
 # List pinned repositories
 list_pinned() {
-    gh api graphql -F query='{ organization(login: "emberlamp") { pinnedItems(first: 6, types: REPOSITORY) { nodes { ... on Repository { name description url } } } } }' --jq '.data.organization.pinnedItems.nodes[] | "– \(.name): \(.description // "No description")"'
+    gh api graphql -F query='{ organization(login: "coccinella-labs") { pinnedItems(first: 6, types: REPOSITORY) { nodes { ... on Repository { name description url } } } } }' --jq '.data.organization.pinnedItems.nodes[] | "– \(.name): \(.description // "No description")"'
 }
 
 # Main
@@ -42,7 +42,7 @@ case "$1" in
         echo ""
         echo "Note: You must be an organization owner to pin repos."
         echo "If API doesn't work, pin repos manually at:"
-        echo "  https://github.com/emberlamp"
+        echo "  https://github.com/coccinella-labs"
         exit 0
         ;;
     --list)
@@ -56,7 +56,7 @@ case "$1" in
         ;;
     *)
         echo "Note: Pinning via API requires specific GraphQL permissions."
-        echo "If this fails, pin repos manually at: https://github.com/emberlamp"
+        echo "If this fails, pin repos manually at: https://github.com/coccinella-labs"
         echo ""
         # Try to list current pinned
         echo "Current pinned repos:"
